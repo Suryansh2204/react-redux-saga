@@ -1,17 +1,22 @@
-import React from 'react'
-import {useSelector} from 'react-redux'
-import cartImg from '../images/icons8-shopping-cart-64.png'
+import React from "react";
+import {  useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import cartImg from "../images/icons8-shopping-cart-64.png";
 const Header = () => {
-  const productCount=useSelector((state)=>state.cartData)
+  const cart = useSelector((state) => state.cartData);
   return (
-    <div className='header'>
-      <h1>React Reduct Saga</h1>
+    <div className="header">
+      <Link to="/">
+        <h1>React Reduct Saga</h1>
+      </Link>
       <div>
-        <img src={cartImg} alt="" />
-        <span>{productCount}</span>
+        <Link to="/cart">
+          <img src={cartImg} alt="" />
+        </Link>
+        <span>{cart.length}</span>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

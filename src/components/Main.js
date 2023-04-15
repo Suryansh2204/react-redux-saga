@@ -1,14 +1,23 @@
-import React from 'react'
-import {useDispatch} from 'react-redux'
-import { addToCart, emptyCart, removeFromCart } from '../redux/actions/cartActions';
+import React, { useEffect } from 'react'
+import {useDispatch, useSelector} from 'react-redux'
+import Card from './Card';
+import { listAll, searchProducts } from '../redux/actions/productAction';
 const Main = () => {
   const dispatch=useDispatch();
-  return (
-    <div>
-      <div><button onClick={()=>dispatch(addToCart())}>Add To Cart</button></div>
-      <div><button onClick={()=>dispatch(removeFromCart())}>Remove From Cart</button></div>
-      <div><button onClick={()=>dispatch(emptyCart())}>Empty Cart</button></div>
-      <div><button>List Cart Items</button></div>
+  const products=useSelector((state)=>state.productData);
+  const cart=useSelector((state)=>state.cartData);
+  useEffect(()=>{
+    dispatch(listAll())
+  },[]);
+    return (
+    <div className='main'>
+      <div className="searchBar">
+        <input type="text" placeholder="Search" onChange={(event)=>dispatch(searchProducts(event.target.value))} />
+      </div>
+      <div className='card'>
+        {products.map((item)=><Card key={item.id} product={item} cart={cart}/>) }
+      </div>
+      
     </div>
   )
 }

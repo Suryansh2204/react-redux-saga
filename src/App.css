@@ -21,6 +21,9 @@ code {
   padding: 0 20px;
 }
 
+.header :link{
+  text-decoration: none;
+}
 .header img{
   z-index: 1;
   width:50px;
@@ -37,4 +40,132 @@ code {
   text-align: center;
   color: white;
   border: 1px solid black;
+}
+
+.searchBar{
+  width: 50%;
+}
+.searchBar input{
+  border-radius: 30px;
+  width: 100%;
+  padding: 5px;
+}
+.searchBar input::placeholder{
+  padding-left: 10px;
+}
+
+.main{
+  margin: 10px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card{
+  flex-wrap: wrap;
+  flex-direction: row;
+  display: flex;
+  margin: 5px;
+  padding: 5px;
+  align-items: center;
+}
+
+.btn button :hover{
+  cursor: pointer;
+  font-weight: bolder;
+}
+
+.btn-btn button{
+  width: 30px;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+.btn-btn button:hover{
+  border: 1px solid black;
+  cursor: pointer;
+}
+.btn-remove:hover{
+  color: #fff;
+  background-color: red;
+}
+.btn-add:hover{
+  color: #fff;
+  background-color: green;
+}
+.cart{
+  margin: 10px;
+  display: flex;
+  align-items: flex-start;
+}
+.cart-data{
+  flex: 70%;
+}
+.calc-data{
+  margin: 15px;
+  flex: 30%;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 4rem;
+  border: #ccc 2px solid;
+  border-radius: 20px;
+  padding: 35px;
+  height: min-content(50vh);
+  /* justify-content: center; */
+}
+.calc-data h1{
+  margin: 15px;
+  align-self: center;
+}
+.calc-data table {
+  flex: 100%;
+}
+
+.calc-data  td {
+  border-bottom: 1px solid black;
+    text-align: center;
+  }
+
+.tile{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 40px;
+  margin: 15px;
+  /* justify-content: center; */
+}
+.tile-img img{
+  width: 250px;
+  margin: 5px;
+}
+.item-name{
+  font-size: 2.5rem;
+  text-decoration: underline;
+}
+.cart-item-info{
+  margin-left: 35px;
+}
+.cart-table-body td{
+  font-size: 1.25rem;
+}
+.cart-table-body span{
+  font-size: 1.25rem;
+  margin: 10px;
+}
+.calc-data h4{
+  align-self: flex-end;
+}
+.btn-del{
+  float: right;
+}
+.cart-table-body i:hover{
+  cursor: pointer;
+}
+
+.nothing{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 7rem);
 }
